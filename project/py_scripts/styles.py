@@ -19,6 +19,11 @@ body {
   background: var(--bg-dark);
   color: var(--text-light);
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .navbar {
@@ -33,6 +38,8 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   margin-bottom: 30px;
+  width: 100%;
+  max-width: 800px;
 }
 
 h2 {
@@ -73,5 +80,34 @@ button:active {
 }
 .stop:hover {
   background: #c0392b;
+}
+
+.login-container {
+  background: var(--bg-panel);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-container h1 {
+  color: var(--primary);
+  margin-bottom: 24px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-container button {
+  width: 100%;
+  margin-top: 12px;
 }
 """
