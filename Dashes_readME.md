@@ -153,3 +153,7 @@ an gif of this is here
 - Nesa Number 38450042
 - dashiell.johnson@education.nsw.gov.au
 - alternative email, dashjohnson5@gmail.com
+
+## completed gant chart
+
+![Gant chart](gantchart.png)
