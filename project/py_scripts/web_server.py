@@ -1,6 +1,14 @@
 import socket
 from html import HTML_PAGE, LOGIN_PAGE
 
+def html_escape(text):
+    """Escape HTML special characters to prevent XSS."""
+    return (text.replace("&", "&amp;")
+                .replace("<", "&lt;")
+                .replace(">", "&gt;")
+                .replace('"', "&quot;")
+                .replace("'", "&#x27;"))
+
 class WebServer:
     def __init__(self, robot, ip, port=80):
         self.robot = robot
@@ -68,6 +76,9 @@ class WebServer:
                     email = form.get("email", "")
                     password = form.get("password", "")
 
+                    # XSS protection: escape email if you ever display it
+                    safe_email = html_escape(email)
+
                     if email == self.user_email and password == self.user_password:
                         self.is_authenticated = True
                         print("✅ Login successful")
@@ -76,6 +87,8 @@ class WebServer:
                         continue
                     else:
                         print("❌ Invalid login attempt")
+                        # Example: If you want to show the email back in the form, use safe_email
+                        # (not currently implemented in LOGIN_PAGE)
                         client.send(b"HTTP/1.0 200 OK\r\nContent-type: text/html\r\n\r\n")
                         client.send(LOGIN_PAGE.encode())
                         client.close()

@@ -6,8 +6,8 @@ from robot import Robot
 from web_server import WebServer
 
 # WiFi Setup
-SSID = 'Telstra84780E'
-PASSWORD = 'ppaheu55xw'
+SSID = 'DashIphone'
+PASSWORD = 'DashesH123'
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
